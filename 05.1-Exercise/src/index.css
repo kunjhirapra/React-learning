@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #0e121d;
+  font-weight: 500;
+}
+.card-content {
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  padding: 80px 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.card-content p {
+  font-size: 2.4rem;
+  margin-bottom: 0px;
+}
+.card-content.active {
+  background-color: #141720;
+  color: #f0f4f8;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+div h1 {
+  text-align: center;
+  margin: 40px 0 20px 0;
+  font-size: 3.6rem;
+}
+div.container {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 20px;
+}

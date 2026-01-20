@@ -1,0 +1,148 @@
+{
+  "cities": [
+    {
+      "cityName": "Madrid",
+      "country": "Spain",
+      "emoji": "ES",
+      "date": "2027-07-15T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 40.46635901755316,
+        "lng": -3.7133789062500004
+      },
+      "id": "b9e9e0b4-b967-4a13-89e1-4e38b80a8cf6"
+    },
+    {
+      "cityName": "Berlin",
+      "country": "Germany",
+      "emoji": "DE",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Amazing 😃",
+      "position": {
+        "lat": 52.53586782505711,
+        "lng": 13.376933665713324
+      },
+      "id": "62f5cb5e-fb18-4f9f-8e93-8ff71e2a3293"
+    },
+    {
+      "id": "e2e1e17d-3e40-4fcb-9b2f-3b59a3f04a4c",
+      "cityName": "Lisbon",
+      "country": "Portugal",
+      "emoji": "PT",
+      "date": "2025-11-06T04:26:19.005Z",
+      "notes": "asdsad",
+      "position": {
+        "lat": 38.72907897685895,
+        "lng": -9.147105216979982
+      }
+    },
+    {
+      "id": "d58ac407-15a5-4c6c-a453-d3d7f9cc8d7a",
+      "cityName": "Sidi Boutayeb",
+      "country": "Morocco",
+      "emoji": "MA",
+      "date": "2025-11-06T06:10:55.464Z",
+      "notes": "sidi",
+      "position": {
+        "lat": 32.93492866908233,
+        "lng": -3.9111328125000004
+      }
+    },
+    {
+      "id": "cbfc226b-d29f-43b3-9c55-fc5c82f867f2",
+      "cityName": "Surendranagar",
+      "country": "India",
+      "emoji": "IN",
+      "date": "2025-11-06T06:12:02.040Z",
+      "notes": "surendranager",
+      "position": {
+        "lat": 22.674847351188536,
+        "lng": 71.64184570312501
+      }
+    },
+    {
+      "id": "3d177d1a-7e32-4b7a-bc0e-52d6671bfc3c",
+      "cityName": "Hueneja",
+      "country": "Spain",
+      "emoji": "ES",
+      "date": "2025-11-06T06:42:36.880Z",
+      "notes": "hunenja",
+      "position": {
+        "lat": 37.16031654673677,
+        "lng": -2.96630859375
+      }
+    },
+    {
+      "id": "7a85d317-52d1-46e1-87fc-c7f74a7b6cf8",
+      "cityName": "Ahmedabad",
+      "country": "India",
+      "emoji": "IN",
+      "date": "2025-11-06T06:44:38.680Z",
+      "notes": "home",
+      "position": {
+        "lat": 23.049683814984615,
+        "lng": 72.67012417316438
+      }
+    },
+    {
+      "id": "cfe7c03a-b84f-4b6c-a8a9-d0c928228f4e",
+      "cityName": "Ahmedabad",
+      "country": "India",
+      "emoji": "IN",
+      "date": "2025-11-06T06:47:07.120Z",
+      "notes": "asdad",
+      "position": {
+        "lat": 23.00264393626796,
+        "lng": 72.59628295898439
+      }
+    },
+    {
+      "id": "b1fc0530-092c-4881-b552-e53f657317bd",
+      "cityName": "Surat",
+      "country": "India",
+      "emoji": "IN",
+      "date": "2025-11-06T07:27:20.480Z",
+      "notes": "surat",
+      "position": {
+        "lat": 21.181850766266123,
+        "lng": 72.84484863281251
+      }
+    },
+    {
+      "id": "a7fffb5c-2518-4835-afe2-8dbc646d4ee4",
+      "cityName": "Madrid",
+      "country": "Spain",
+      "emoji": "ES",
+      "date": "2025-11-06T07:28:28.535Z",
+      "notes": "madrid",
+      "position": {
+        "lat": 40.3915347826073,
+        "lng": -3.6145019531250004
+      }
+    },
+    {
+      "id": "14bf781a-13c2-4191-8c19-02816cc8b057",
+      "cityName": "Canha",
+      "country": "Portugal",
+      "emoji": "pt",
+      "date": "2025-12-03T07:48:46.143Z",
+      "notes": "s",
+      "position": {
+        "lat": 38.773357720269075,
+        "lng": -8.697052001953127
+      }
+    },
+    {
+      "id": "48d13495-e9d2-4ef0-b9fa-f9eaa2b951ca",
+      "cityName": "Ahmedabad",
+      "country": "India",
+      "emoji": "in",
+      "date": "2025-12-03T07:48:55.765Z",
+      "notes": "s",
+      "position": {
+        "lat": 23.0883328,
+        "lng": 72.5090304
+      }
+    }
+  ]
+}

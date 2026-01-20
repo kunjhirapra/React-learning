@@ -1,0 +1,182 @@
+-- Reset sequences to start from 1
+SELECT setval(pg_get_serial_sequence('public.cabins','id'), 1, false) AS cabins_seq_reset;
+SELECT setval(pg_get_serial_sequence('public.guests','id'), 1, false) AS guests_seq_reset;
+SELECT setval(pg_get_serial_sequence('public.bookings','id'), 1, false) AS bookings_seq_reset;
+
+
+
+-- Step 1: Insert cabins
+INSERT INTO public.cabins (cabin_name, max_capacity, regular_price, discount, image, description, created_at)
+VALUES
+('001', 2, 250, 0, 'cabin-images/cabin-001.jpg', 'Discover the ultimate luxury getaway for couples in the cozy wooden cabin 001. Nestled in a picturesque forest, this stunning cabin offers a secluded and intimate retreat. Inside, enjoy modern high-quality wood interiors, a comfortable seating area, a fireplace and a fully-equipped kitchen. The plush king-size bed, dressed in fine linens guarantees a peaceful nights sleep. Relax in the spa-like shower and unwind on the private deck with hot tub.', now()),
+('002', 2, 350, 25, 'cabin-images/cabin-002.jpg', 'Escape to the serenity of nature and indulge in luxury in our cozy cabin 002. Perfect for couples, this cabin offers a secluded and intimate retreat in the heart of a picturesque forest. Inside, you will find warm and inviting interiors crafted from high-quality wood, a comfortable living area, a fireplace and a fully-equipped kitchen. The luxurious bedroom features a plush king-size bed and spa-like shower. Relax on the private deck with hot tub and take in the beauty of nature.', now()),
+('003', 4, 300, 0, 'cabin-images/cabin-003.jpg', 'Experience luxury family living in our medium-sized wooden cabin 003. Perfect for families of up to 4 people, this cabin offers a comfortable and inviting space with all modern amenities. Inside, you will find warm and inviting interiors crafted from high-quality wood, a comfortable living area, a fireplace, and a fully-equipped kitchen. The bedrooms feature plush beds and spa-like bathrooms. The cabin has a private deck with a hot tub and outdoor seating area, perfect for taking in the natural surroundings.', now()),
+('004', 4, 500, 50, 'cabin-images/cabin-004.jpg', 'Indulge in the ultimate luxury family vacation in this medium-sized cabin 004. Designed for families of up to 4, this cabin offers a sumptuous retreat for the discerning traveler. Inside, the cabin boasts of opulent interiors crafted from the finest quality wood, a comfortable living area, a fireplace, and a fully-equipped gourmet kitchen. The bedrooms are adorned with plush beds and spa-inspired en-suite bathrooms. Step outside to your private deck and soak in the natural surroundings while relaxing in your own hot tub.', now()),
+('005', 6, 350, 0, 'cabin-images/cabin-005.jpg', 'Enjoy a comfortable and cozy getaway with your group or family in our spacious cabin 005. Designed to accommodate up to 6 people, this cabin offers a secluded retreat in the heart of nature. Inside, the cabin features warm and inviting interiors crafted from quality wood, a living area with fireplace, and a fully-equipped kitchen. The bedrooms are comfortable and equipped with en-suite bathrooms. Step outside to your private deck and take in the natural surroundings while relaxing in your own hot tub.', now()),
+('006', 6, 800, 100, 'cabin-images/cabin-006.jpg', 'Experience the epitome of luxury with your group or family in our spacious wooden cabin 006. Designed to comfortably accommodate up to 6 people, this cabin offers a lavish retreat in the heart of nature. Inside, the cabin features opulent interiors crafted from premium wood, a grand living area with fireplace, and a fully-equipped gourmet kitchen. The bedrooms are adorned with plush beds and spa-like en-suite bathrooms. Step outside to your private deck and soak in the natural surroundings while relaxing in your own hot tub.', now()),
+('007', 8, 600, 100, 'cabin-images/cabin-007.jpg', 'Accommodate your large group or multiple families in the spacious and grand wooden cabin 007. Designed to comfortably fit up to 8 people, this cabin offers a secluded retreat in the heart of beautiful forests and mountains. Inside, the cabin features warm and inviting interiors crafted from quality wood, multiple living areas with fireplace, and a fully-equipped kitchen. The bedrooms are comfortable and equipped with en-suite bathrooms. The cabin has a private deck with a hot tub and outdoor seating area, perfect for taking in the natural surroundings.', now()),
+('008', 10, 1400, 0, 'cabin-images/cabin-008.jpg', 'Experience the epitome of luxury and grandeur with your large group or multiple families in our grand cabin 008. This cabin offers a lavish retreat that caters to all your needs and desires. The cabin features an opulent design and boasts of high-end finishes, intricate details and the finest quality wood throughout. Inside, the cabin features multiple grand living areas with fireplaces, a formal dining area, and a gourmet kitchen that is a chef''s dream. The bedrooms are designed for ultimate comfort and luxury, with plush beds and en-suite spa-inspired bathrooms. Step outside and immerse yourself in the beauty of nature from your private deck, featuring a luxurious hot tub and ample seating areas for ultimate relaxation and enjoyment.', now());
+
+
+
+
+
+-- Step 2: Insert guests
+INSERT INTO public.guests (full_name, email, national_id, nationality, country_flag, created_at)
+VALUES
+('Jonas Schmedtmann','hello@jonas.io','3525436345','Portugal','https://flagcdn.com/pt.svg', now()),
+('Jonathan Smith','johnsmith@test.eu','4534593454','Great Britain','https://flagcdn.com/gb.svg', now()),
+('Jonatan Johansson','jonatan@example.com','9374074454','Finland','https://flagcdn.com/fi.svg', now()),
+('Jonas Mueller','jonas@example.eu','1233212288','Germany','https://flagcdn.com/de.svg', now()),
+('Jonas Anderson','anderson@example.com','0988520146','Bolivia (Plurinational State of)','https://flagcdn.com/bo.svg', now()),
+('Jonathan Williams','jowi@gmail.com','633678543','United States of America','https://flagcdn.com/us.svg', now()),
+('Emma Watson','emma@gmail.com','1234578901','United Kingdom','https://flagcdn.com/gb.svg', now()),
+('Mohammed Ali','mohammedali@yahoo.com','987543210','Egypt','https://flagcdn.com/eg.svg', now()),
+('Maria Rodriguez','maria@gmail.com','1098765321','Spain','https://flagcdn.com/es.svg', now()),
+('Li Mei','li.mei@hotmail.com','102934756','China','https://flagcdn.com/cn.svg', now()),
+('Khadija Ahmed','khadija@gmail.com','1023457890','Sudan','https://flagcdn.com/sd.svg', now()),
+('Gabriel Silva','gabriel@gmail.com','109283465','Brazil','https://flagcdn.com/br.svg', now()),
+('Maria Gomez','maria@example.com','108765421','Mexico','https://flagcdn.com/mx.svg', now()),
+('Ahmed Hassan','ahmed@gmail.com','1077777777','Egypt','https://flagcdn.com/eg.svg', now()),
+('John Doe','johndoe@gmail.com','3245908744','United States','https://flagcdn.com/us.svg', now()),
+('Fatima Ahmed','fatima@example.com','1089999363','Pakistan','https://flagcdn.com/pk.svg', now()),
+('David Smith','david@gmail.com','44450960283','Australia','https://flagcdn.com/au.svg', now()),
+('Marie Dupont','marie@gmail.com','06934233728','France','https://flagcdn.com/fr.svg', now()),
+('Ramesh Patel','ramesh@gmail.com','9875412303','India','https://flagcdn.com/in.svg', now()),
+('Fatimah Al-Sayed','fatimah@gmail.com','0123456789','Kuwait','https://flagcdn.com/kw.svg', now()),
+('Nina Williams','nina@hotmail.com','2345678901','South Africa','https://flagcdn.com/za.svg', now()),
+('Taro Tanaka','taro@gmail.com','3456789012','Japan','https://flagcdn.com/jp.svg', now()),
+('Abdul Rahman','abdul@gmail.com','4567890123','Saudi Arabia','https://flagcdn.com/sa.svg', now()),
+('Julie Nguyen','julie@gmail.com','5678901234','Vietnam','https://flagcdn.com/vn.svg', now()),
+('Sara Lee','sara@gmail.com','6789012345','South Korea','https://flagcdn.com/kr.svg', now()),
+('Carlos Gomez','carlos@yahoo.com','7890123456','Colombia','https://flagcdn.com/co.svg', now()),
+('Emma Brown','emma@gmail.com','8901234567','Canada','https://flagcdn.com/ca.svg', now()),
+('Juan Hernandez','juan@yahoo.com','4343433333','Argentina','https://flagcdn.com/ar.svg', now()),
+('Ibrahim Ahmed','ibrahim@yahoo.com','2345678009','Nigeria','https://flagcdn.com/ng.svg', now()),
+('Mei Chen','mei@gmail.com','3456117890','Taiwan','https://flagcdn.com/tw.svg', now());
+
+
+
+
+-- Step 3: Insert bookings
+INSERT INTO public.bookings (created_at, start_date, end_date, num_guests, has_breakfast, is_paid, observations, cabin_id, guest_id)
+VALUES
+(now() + interval '-20 days', (now() + interval '0 days')::date, (now() + interval '7 days')::date, 1, true, false, 'I have a gluten allergy and would like to request a gluten-free breakfast.', 1, 2),
+(now() + interval '-33 days', (now() + interval '-23 days')::date, (now() + interval '-13 days')::date, 2, true, true, '', 1, 3),
+(now() + interval '-27 days', (now() + interval '12 days')::date, (now() + interval '18 days')::date, 2, false, false, '', 1, 4),
+(now() + interval '-45 days', (now() + interval '-45 days')::date, (now() + interval '-29 days')::date, 2, false, true, '', 2, 5),
+(now() + interval '-2 days', (now() + interval '15 days')::date, (now() + interval '18 days')::date, 2, true, true, '', 2, 6),
+(now() + interval '-5 days', (now() + interval '33 days')::date, (now() + interval '48 days')::date, 2, true, false, '', 2, 7),
+(now() + interval '-65 days', (now() + interval '-25 days')::date, (now() + interval '-20 days')::date, 4, true, true, '', 3, 8),
+(now() + interval '-2 days', (now() + interval '-2 days')::date, (now() + interval '0 days')::date, 3, false, true, 'We will be bringing our small dog with us', 3, 9),
+(now() + interval '-14 days', (now() + interval '-14 days')::date, (now() + interval '-11 days')::date, 4, true, true, '', 3, 10),
+(now() + interval '-30 days', (now() + interval '-4 days')::date, (now() + interval '8 days')::date, 4, true, true, '', 4, 11),
+(now() + interval '-1 days', (now() + interval '12 days')::date, (now() + interval '17 days')::date, 4, true, false, '', 4, 12),
+(now() + interval '-3 days', (now() + interval '18 days')::date, (now() + interval '19 days')::date, 1, false, true, '', 4, 13),
+(now() + interval '0 days', (now() + interval '14 days')::date, (now() + interval '21 days')::date, 5, true, false, '', 5, 14),
+(now() + interval '-6 days', (now() + interval '-6 days')::date, (now() + interval '-4 days')::date, 4, true, true, '', 5, 15),
+(now() + interval '-4 days', (now() + interval '-4 days')::date, (now() + interval '-1 days')::date, 6, false, true, '', 5, 16),
+(now() + interval '-3 days', (now() + interval '0 days')::date, (now() + interval '11 days')::date, 6, false, true, 'We will be checking in late, around midnight. Hope that''s okay :)', 6, 17),
+(now() + interval '-16 days', (now() + interval '-16 days')::date, (now() + interval '-9 days')::date, 4, true, true, 'I will need a rollaway bed for one of the guests', 6, 18),
+(now() + interval '-18 days', (now() + interval '-4 days')::date, (now() + interval '-1 days')::date, 6, true, true, '', 6, 19),
+(now() + interval '-2 days', (now() + interval '17 days')::date, (now() + interval '23 days')::date, 8, false, false, '', 7, 20),
+(now() + interval '-7 days', (now() + interval '40 days')::date, (now() + interval '50 days')::date, 7, true, true, '', 7, 21),
+(now() + interval '-55 days', (now() + interval '32 days')::date, (now() + interval '37 days')::date, 6, true, true, '', 7, 22),
+(now() + interval '-8 days', (now() + interval '-5 days')::date, (now() + interval '0 days')::date, 9, true, true, 'My wife has a gluten allergy so I would like to request a gluten-free breakfast if possible', 8, 1),
+(now() + interval '0 days', (now() + interval '0 days')::date, (now() + interval '5 days')::date, 10, true, true, 'I am celebrating my anniversary, can you arrange for any special amenities or decorations?', 8, 23),
+(now() + interval '-10 days', (now() + interval '10 days')::date, (now() + interval '13 days')::date, 7, false, true, '', 8, 24);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Fixed import: cabins, guests, bookings using now() offsets
+BEGIN;
+
+-- Cabins
+INSERT INTO public.cabins (cabin_name, max_capacity, regular_price, discount, image, description, created_at)
+VALUES
+('001', 2, 250, 0, 'cabin-images/cabin-001.jpg', 'Discover the ultimate luxury getaway for couples in the cozy wooden cabin 001. Nestled in a picturesque forest, this stunning cabin offers a secluded and intimate retreat. Inside, enjoy modern high-quality wood interiors, a comfortable seating area, a fireplace and a fully-equipped kitchen. The plush king-size bed, dressed in fine linens guarantees a peaceful nights sleep. Relax in the spa-like shower and unwind on the private deck with hot tub.', now()),
+('002', 2, 350, 25, 'cabin-images/cabin-002.jpg', 'Escape to the serenity of nature and indulge in luxury in our cozy cabin 002. Perfect for couples, this cabin offers a secluded and intimate retreat in the heart of a picturesque forest. Inside, you will find warm and inviting interiors crafted from high-quality wood, a comfortable living area, a fireplace and a fully-equipped kitchen. The luxurious bedroom features a plush king-size bed and spa-like shower. Relax on the private deck with hot tub and take in the beauty of nature.', now()),
+('003', 4, 300, 0, 'cabin-images/cabin-003.jpg', 'Experience luxury family living in our medium-sized wooden cabin 003. Perfect for families of up to 4 people, this cabin offers a comfortable and inviting space with all modern amenities. Inside, you will find warm and inviting interiors crafted from high-quality wood, a comfortable living area, a fireplace, and a fully-equipped kitchen. The bedrooms feature plush beds and spa-like bathrooms. The cabin has a private deck with a hot tub and outdoor seating area, perfect for taking in the natural surroundings.', now()),
+('004', 4, 500, 50, 'cabin-images/cabin-004.jpg', 'Indulge in the ultimate luxury family vacation in this medium-sized cabin 004. Designed for families of up to 4, this cabin offers a sumptuous retreat for the discerning traveler. Inside, the cabin boasts of opulent interiors crafted from the finest quality wood, a comfortable living area, a fireplace, and a fully-equipped gourmet kitchen. The bedrooms are adorned with plush beds and spa-inspired en-suite bathrooms. Step outside to your private deck and soak in the natural surroundings while relaxing in your own hot tub.', now()),
+('005', 6, 350, 0, 'cabin-images/cabin-005.jpg', 'Enjoy a comfortable and cozy getaway with your group or family in our spacious cabin 005. Designed to accommodate up to 6 people, this cabin offers a secluded retreat in the heart of nature. Inside, the cabin features warm and inviting interiors crafted from quality wood, a living area with fireplace, and a fully-equipped kitchen. The bedrooms are comfortable and equipped with en-suite bathrooms. Step outside to your private deck and take in the natural surroundings while relaxing in your own hot tub.', now()),
+('006', 6, 800, 100, 'cabin-images/cabin-006.jpg', 'Experience the epitome of luxury with your group or family in our spacious wooden cabin 006. Designed to comfortably accommodate up to 6 people, this cabin offers a lavish retreat in the heart of nature. Inside, the cabin features opulent interiors crafted from premium wood, a grand living area with fireplace, and a fully-equipped gourmet kitchen. The bedrooms are adorned with plush beds and spa-like en-suite bathrooms. Step outside to your private deck and soak in the natural surroundings while relaxing in your own hot tub.', now()),
+('007', 8, 600, 100, 'cabin-images/cabin-007.jpg', 'Accommodate your large group or multiple families in the spacious and grand wooden cabin 007. Designed to comfortably fit up to 8 people, this cabin offers a secluded retreat in the heart of beautiful forests and mountains. Inside, the cabin features warm and inviting interiors crafted from quality wood, multiple living areas with fireplace, and a fully-equipped kitchen. The bedrooms are comfortable and equipped with en-suite bathrooms. The cabin has a private deck with a hot tub and outdoor seating area, perfect for taking in the natural surroundings.', now()),
+('008', 10, 1400, 0, 'cabin-images/cabin-008.jpg', 'Experience the epitome of luxury and grandeur with your large group or multiple families in our grand cabin 008. This cabin offers a lavish retreat that caters to all your needs and desires. The cabin features an opulent design and boasts of high-end finishes, intricate details and the finest quality wood throughout. Inside, the cabin features multiple grand living areas with fireplaces, a formal dining area, and a gourmet kitchen that is a chef''s dream. The bedrooms are designed for ultimate comfort and luxury, with plush beds and en-suite spa-inspired bathrooms. Step outside and immerse yourself in the beauty of nature from your private deck, featuring a luxurious hot tub and ample seating areas for ultimate relaxation and enjoyment.', now());
+
+-- Guests
+INSERT INTO public.guests (full_name, email, national_id, nationality, country_flag, created_at)
+VALUES
+('Jonas Schmedtmann','hello@jonas.io','3525436345','Portugal','https://flagcdn.com/pt.svg', now()),
+('Jonathan Smith','johnsmith@test.eu','4534593454','Great Britain','https://flagcdn.com/gb.svg', now()),
+('Jonatan Johansson','jonatan@example.com','9374074454','Finland','https://flagcdn.com/fi.svg', now()),
+('Jonas Mueller','jonas@example.eu','1233212288','Germany','https://flagcdn.com/de.svg', now()),
+('Jonas Anderson','anderson@example.com','0988520146','Bolivia (Plurinational State of)','https://flagcdn.com/bo.svg', now()),
+('Jonathan Williams','jowi@gmail.com','633678543','United States of America','https://flagcdn.com/us.svg', now()),
+('Emma Watson','emma@gmail.com','1234578901','United Kingdom','https://flagcdn.com/gb.svg', now()),
+('Mohammed Ali','mohammedali@yahoo.com','987543210','Egypt','https://flagcdn.com/eg.svg', now()),
+('Maria Rodriguez','maria@gmail.com','1098765321','Spain','https://flagcdn.com/es.svg', now()),
+('Li Mei','li.mei@hotmail.com','102934756','China','https://flagcdn.com/cn.svg', now()),
+('Khadija Ahmed','khadija@gmail.com','1023457890','Sudan','https://flagcdn.com/sd.svg', now()),
+('Gabriel Silva','gabriel@gmail.com','109283465','Brazil','https://flagcdn.com/br.svg', now()),
+('Maria Gomez','maria@example.com','108765421','Mexico','https://flagcdn.com/mx.svg', now()),
+('Ahmed Hassan','ahmed@gmail.com','1077777777','Egypt','https://flagcdn.com/eg.svg', now()),
+('John Doe','johndoe@gmail.com','3245908744','United States','https://flagcdn.com/us.svg', now()),
+('Fatima Ahmed','fatima@example.com','1089999363','Pakistan','https://flagcdn.com/pk.svg', now()),
+('David Smith','david@gmail.com','44450960283','Australia','https://flagcdn.com/au.svg', now()),
+('Marie Dupont','marie@gmail.com','06934233728','France','https://flagcdn.com/fr.svg', now()),
+('Ramesh Patel','ramesh@gmail.com','9875412303','India','https://flagcdn.com/in.svg', now()),
+('Fatimah Al-Sayed','fatimah@gmail.com','0123456789','Kuwait','https://flagcdn.com/kw.svg', now()),
+('Nina Williams','nina@hotmail.com','2345678901','South Africa','https://flagcdn.com/za.svg', now()),
+('Taro Tanaka','taro@gmail.com','3456789012','Japan','https://flagcdn.com/jp.svg', now()),
+('Abdul Rahman','abdul@gmail.com','4567890123','Saudi Arabia','https://flagcdn.com/sa.svg', now()),
+('Julie Nguyen','julie@gmail.com','5678901234','Vietnam','https://flagcdn.com/vn.svg', now()),
+('Sara Lee','sara@gmail.com','6789012345','South Korea','https://flagcdn.com/kr.svg', now()),
+('Carlos Gomez','carlos@yahoo.com','7890123456','Colombia','https://flagcdn.com/co.svg', now()),
+('Emma Brown','emma@gmail.com','8901234567','Canada','https://flagcdn.com/ca.svg', now()),
+('Juan Hernandez','juan@yahoo.com','4343433333','Argentina','https://flagcdn.com/ar.svg', now()),
+('Ibrahim Ahmed','ibrahim@yahoo.com','2345678009','Nigeria','https://flagcdn.com/ng.svg', now()),
+('Mei Chen','mei@gmail.com','3456117890','Taiwan','https://flagcdn.com/tw.svg', now());
+
+-- Bookings: use intervals to match fromToday offsets in JS
+-- Format: created_at = now() + interval '<n> days' (n negative for past)
+INSERT INTO public.bookings (created_at, start_date, end_date, num_guests, has_breakfast, is_paid, observations, cabin_id, guest_id)
+VALUES
+(now() + interval '-20 days', (now() + interval '0 days')::date, (now() + interval '7 days')::date, 1, true, false, 'I have a gluten allergy and would like to request a gluten-free breakfast.', 1, 2),
+(now() + interval '-33 days', (now() + interval '-23 days')::date, (now() + interval '-13 days')::date, 2, true, true, '', 1, 3),
+(now() + interval '-27 days', (now() + interval '12 days')::date, (now() + interval '18 days')::date, 2, false, false, '', 1, 4),
+(now() + interval '-45 days', (now() + interval '-45 days')::date, (now() + interval '-29 days')::date, 2, false, true, '', 2, 5),
+(now() + interval '-2 days', (now() + interval '15 days')::date, (now() + interval '18 days')::date, 2, true, true, '', 2, 6),
+(now() + interval '-5 days', (now() + interval '33 days')::date, (now() + interval '48 days')::date, 2, true, false, '', 2, 7),
+(now() + interval '-65 days', (now() + interval '-25 days')::date, (now() + interval '-20 days')::date, 4, true, true, '', 3, 8),
+(now() + interval '-2 days', (now() + interval '-2 days')::date, (now() + interval '0 days')::date, 3, false, true, 'We will be bringing our small dog with us', 3, 9),
+(now() + interval '-14 days', (now() + interval '-14 days')::date, (now() + interval '-11 days')::date, 4, true, true, '', 3, 10),
+(now() + interval '-30 days', (now() + interval '-4 days')::date, (now() + interval '8 days')::date, 4, true, true, '', 4, 11),
+(now() + interval '-1 days', (now() + interval '12 days')::date, (now() + interval '17 days')::date, 4, true, false, '', 4, 12),
+(now() + interval '-3 days', (now() + interval '18 days')::date, (now() + interval '19 days')::date, 1, false, true, '', 4, 13),
+(now() + interval '0 days', (now() + interval '14 days')::date, (now() + interval '21 days')::date, 5, true, false, '', 5, 14),
+(now() + interval '-6 days', (now() + interval '-6 days')::date, (now() + interval '-4 days')::date, 4, true, true, '', 5, 15),
+(now() + interval '-4 days', (now() + interval '-4 days')::date, (now() + interval '-1 days')::date, 6, false, true, '', 5, 16),
+(now() + interval '-3 days', (now() + interval '0 days')::date, (now() + interval '11 days')::date, 6, false, true, 'We will be checking in late, around midnight. Hope that''s okay :)', 6, 17),
+(now() + interval '-16 days', (now() + interval '-16 days')::date, (now() + interval '-9 days')::date, 4, true, true, 'I will need a rollaway bed for one of the guests', 6, 18),
+(now() + interval '-18 days', (now() + interval '-4 days')::date, (now() + interval '-1 days')::date, 6, true, true, '', 6, 19),
+(now() + interval '-2 days', (now() + interval '17 days')::date, (now() + interval '23 days')::date, 8, false, false, '', 7, 20),
+(now() + interval '-7 days', (now() + interval '40 days')::date, (now() + interval '50 days')::date, 7, true, true, '', 7, 21),
+(now() + interval '-55 days', (now() + interval '32 days')::date, (now() + interval '37 days')::date, 6, true, true, '', 7, 22),
+(now() + interval '-8 days', (now() + interval '-5 days')::date, (now() + interval '0 days')::date, 9, true, true, 'My wife has a gluten allergy so I would like to request a gluten-free breakfast if possible', 8, 1),
+(now() + interval '0 days', (now() + interval '0 days')::date, (now() + interval '5 days')::date, 10, true, true, 'I am celebrating my anniversary, can you arrange for any special amenities or decorations?', 8, 23),
+(now() + interval '-10 days', (now() + interval '10 days')::date, (now() + interval '13 days')::date, 7, false, true, '', 8, 24);
+
+COMMIT;
